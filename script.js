@@ -34,22 +34,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Navbar scroll effect
+    // Navbar shadow on scroll and active section highlighting
     const navbar = document.querySelector('custom-navbar');
-    let lastScrollTop = 0;
+    const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
     
     window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
+        if (window.scrollY > 10) {
+            navbar.shadowRoot.querySelector('nav').style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
         } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
+            navbar.shadowRoot.querySelector('nav').style.boxShadow = 'none';
         }
-        
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+        // Highlight active section
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 300)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
     });
 });
