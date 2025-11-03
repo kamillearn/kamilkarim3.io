@@ -1,0 +1,98 @@
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+
+/* Project Cards */
+.project-card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.project-image {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1;
+    transition: all 0.25s ease;
+}
+
+.project-card:hover .project-image {
+    filter: none;
+}
+
+.project-content {
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
+    text-align: right;
+    z-index: 2;
+}
+
+.project-card:nth-child(even) .project-image {
+    grid-column: 6 / -1;
+}
+
+.project-card:nth-child(even) .project-content {
+    grid-column: 1 / 8;
+    text-align: left;
+}
+
+/* Experience Tabs */
+.experience-tab.active-tab {
+    border-color: #64ffda;
+    color: #64ffda;
+}
+
+.experience-content {
+    display: none;
+}
+
+.experience-content.active-content {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-card,
+    .project-card:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .project-image,
+    .project-card:nth-child(even) .project-image {
+        grid-column: 1 / -1;
+        opacity: 0.25;
+    }
+    
+    .project-content,
+    .project-card:nth-child(even) .project-content {
+        grid-column: 1 / -1;
+        padding: 2rem;
+        background-color: rgba(10, 25, 47, 0.85);
+        text-align: left;
+    }
+}
