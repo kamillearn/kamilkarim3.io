@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittany Chiang | Frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#64ffda',
+                        },
+                        secondary: {
+                            500: '#ccd6f6',
+                        },
+                        dark: {
+                            900: '#0a192f',
+                            800: '#112240',
+                            700: '#233554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-dark-900 text-secondary-500 font-sans overflow-x-hidden">
+    <custom-navbar></custom-navbar>
+    <main class="max-w-6xl mx-auto px-6 py-20">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center">
+            <p class="text-primary-500 mb-4">Hi, my name is</p>
+            <h1 class="text-6xl font-bold text-white mb-4">Brittany Chiang.</h1>
+            <h2 class="text-5xl font-semibold text-gray-400 mb-6">I build things for the web.</h2>
+            <p class="max-w-xl text-lg mb-10">
+                I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at Upstatement.
+            </p>
+            <a href="#about" class="border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500/10 transition-all duration-300 inline-block w-max">
+                Check out my work!
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32">
+            <h2 class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+                <span class="text-primary-500 mr-2">01.</span> About Me
+            </h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-2/3">
+                    <p class="mb-4">Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
+                    <p class="mb-4">Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.</p>
+                    <p class="mb-8">I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.</p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="grid grid-cols-2 mt-4 gap-2">
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> JavaScript (ES6+)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> React
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> Node.js
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> TypeScript
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> Gatsby
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-primary-500 mr-2">▹</span> GraphQL
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/3 relative group">
+                    <div class="w-full h-auto rounded overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded before:border-2 before:border-primary-500 before:translate-x-4 before:translate-y-4 before:z-[-1] before:transition-all before:duration-300 group-hover:before:translate-x-3 group-hover:before:translate-y-3">
+                        <img src="http://static.photos/technology/640x360/42" alt="Brittany Chiang" class="w-full h-auto rounded grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-32">
+            <h2 class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+                <span class="text-primary-500 mr-2">02.</span> Where I've Worked
+            </h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/4">
+                    <div class="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-gray-700">
+                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300 active-tab">Upstatement</button>
+                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Scout</button>
+                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Apple</button>
+                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Starry</button>
+                    </div>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="experience-content active-content">
+                        <h3 class="text-xl font-medium text-white">Engineer <span class="text-primary-500">@ Upstatement</span></h3>
+                        <p class="text-sm mb-6">May 2018 - Present</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Write modern, performant, maintainable code for a diverse array of client and internal projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="experience-content hidden">
+                        <h3 class="text-xl font-medium text-white">Studio Developer <span class="text-primary-500">@ Scout</span></h3>
+                        <p class="text-sm mb-6">Jan - Apr 2018</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Helped solidify a brand direction for blistabloc that spans both packaging and web</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Interfaced with clients on a weekly basis, providing technological expertise</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-32">
+            <h2 class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+                <span class="text-primary-500 mr-2">03.</span> Some Things I've Built
+            </h2>
+            <div class="space-y-24">
+                <div class="project-card group">
+                    <div class="project-image">
+                        <img src="http://static.photos/technology/640x360/1" alt="Halcyon Theme" class="w-full h-auto rounded">
+                    </div>
+                    <div class="project-content">
+                        <p class="text-primary-500 mb-2">Featured Project</p>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Halcyon Theme</h3>
+                        <div class="bg-dark-800 p-6 rounded mb-4">
+                            <p>A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.</p>
+                        </div>
+                        <ul class="flex flex-wrap gap-4 text-sm mb-4">
+                            <li>VS Code</li>
+                            <li>Sublime Text</li>
+                            <li>Atom</li>
+                            <li>iTerm2</li>
+                            <li>Hyper</li>
+                        </ul>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
+                                <i data-feather="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card group">
+                    <div class="project-image">
+                        <img src="http://static.photos/technology/640x360/2" alt="Spotify Profile" class="w-full h-auto rounded">
+                    </div>
+                    <div class="project-content">
+                        <p class="text-primary-500 mb-2">Featured Project</p>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Spotify Profile</h3>
+                        <div class="bg-dark-800 p-6 rounded mb-4">
+                            <p>Web application for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.</p>
+                        </div>
+                        <ul class="flex flex-wrap gap-4 text-sm mb-4">
+                            <li>React</li>
+                            <li>Express</li>
+                            <li>Spotify API</li>
+                            <li>Styled Components</li>
+                            <li>Heroku</li>
+                        </ul>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
+                                <i data-feather="external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 text-center">
+            <p class="text-primary-500 text-sm mb-4">04. What's Next?</p>
+            <h2 class="text-5xl font-bold text-white mb-6">Get In Touch</h2>
+            <p class="max-w-xl mx-auto mb-10">
+                Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            <a href="mailto:brittany.chiang@gmail.com" class="border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500/10 transition-all duration-300 inline-block">
+                Say Hello
+            </a>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <!-- Side Social Links -->
+    <div class="fixed left-10 bottom-0 hidden md:block">
+        <div class="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-secondary-500">
+            <a href="#" class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+                <i data-feather="github"></i>
+            </a>
+            <a href="#" class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+                <i data-feather="twitter"></i>
+            </a>
+            <a href="#" class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+                <i data-feather="linkedin"></i>
+            </a>
+            <a href="#" class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+                <i data-feather="mail"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Side Email -->
+    <div class="fixed right-10 bottom-0 hidden md:block">
+        <div class="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-secondary-500">
+            <a href="mailto:brittany.chiang@gmail.com" class="text-secondary-500 text-sm hover:text-primary-500 transition-all duration-300 [writing-mode:vertical-rl]">
+                brittany.chiang@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
