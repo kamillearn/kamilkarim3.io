@@ -13,7 +13,7 @@
                 extend: {
                     colors: {
                         primary: {
-                            500: '#64ffda',
+                            500: '#0a192f',
                         },
                         secondary: {
                             500: '#ccd6f6',
@@ -37,7 +37,7 @@
         <!-- Hero Section -->
         <section class="min-h-screen flex flex-col justify-center">
             <p class="text-primary-500 mb-4">Hi, my name is</p>
-            <h1 class="text-6xl font-bold text-white mb-4">Brittany Chiang.</h1>
+            <h1 class="text-6xl font-bold text-white mb-4">Kamil Karim.</h1>
             <h2 class="text-5xl font-semibold text-gray-400 mb-6">I build things for the web.</h2>
             <p class="max-w-xl text-lg mb-10">
                 I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at Upstatement.
@@ -86,63 +86,96 @@
                 </div>
             </div>
         </section>
-
         <!-- Experience Section -->
         <section id="experience" class="py-32">
             <h2 class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
                 <span class="text-primary-500 mr-2">02.</span> Where I've Worked
             </h2>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/4">
-                    <div class="flex md:flex-col overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-gray-700">
-                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300 active-tab">Upstatement</button>
-                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Scout</button>
-                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Apple</button>
-                        <button class="experience-tab px-4 py-2 md:px-0 md:py-3 md:pl-4 md:text-left whitespace-nowrap border-b-2 md:border-b-0 md:border-l-2 border-transparent hover:bg-dark-700/50 hover:text-primary-500 transition-all duration-300">Starry</button>
+            <div class="space-y-8">
+                <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
+                    <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-medium text-white">Engineer <span class="text-primary-500">@ Upstatement</span></h3>
+                            <p class="text-sm text-gray-400">May 2018 - Present</p>
+                        </div>
+                        <ul class="space-y-3">
+                            <li>Write modern, performant, maintainable code for a diverse array of client and internal projects</li>
+                            <li>Work with a variety of different languages, platforms, frameworks, and content management systems</li>
+                            <li>Communicate with multi-disciplinary teams of engineers, designers, producers, and clients</li> </ul>
                     </div>
                 </div>
-                <div class="md:w-3/4">
-                    <div class="experience-content active-content">
-                        <h3 class="text-xl font-medium text-white">Engineer <span class="text-primary-500">@ Upstatement</span></h3>
-                        <p class="text-sm mb-6">May 2018 - Present</p>
+
+                <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
+                    <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-medium text-white">Studio Developer <span class="text-primary-500">@ Scout</span></h3>
+                            <p class="text-sm text-gray-400">Jan - Apr 2018</p>
+                        </div>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Write modern, performant, maintainable code for a diverse array of client and internal projects</span>
+                                <span>Built marketing website and e-commerce platform for blistabloc startup</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify</span>
+                                <span>Helped solidify brand direction spanning packaging and web</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis</span>
+                                <span>Interfaced with clients weekly to provide technological expertise</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="experience-content hidden">
-                        <h3 class="text-xl font-medium text-white">Studio Developer <span class="text-primary-500">@ Scout</span></h3>
-                        <p class="text-sm mb-6">Jan - Apr 2018</p>
+                </div>
+
+                <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
+                    <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-medium text-white">UI Engineer <span class="text-primary-500">@ Apple</span></h3>
+                            <p class="text-sm text-gray-400">2016 - 2017</p>
+                        </div>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Worked with a team of three designers to build a marketing website and e-commerce platform for blistabloc, an ambitious startup originating from Northeastern</span>
+                                <span>Developed web applications for Apple Music using Ember.js</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Helped solidify a brand direction for blistabloc that spans both packaging and web</span>
+                                <span>Built Apple Music Extension within Facebook Messenger</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                                <span>Interfaced with clients on a weekly basis, providing technological expertise</span>
+                                <span>Architected front-end of Apple Music's embeddable web player</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
+                    <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-medium text-white">Software Engineer <span class="text-primary-500">@ Starry</span></h3>
+                            <p class="text-sm text-gray-400">2015 - 2016</p>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Engineered major features of customer-facing web app</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Implemented scalable solutions for cloud services issues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary-500 mr-2 mt-1">▹</span>
+                                <span>Collaborated with UX designers for coherent experiences</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Work Section -->
+<!-- Work Section -->
         <section id="work" class="py-32">
             <h2 class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
                 <span class="text-primary-500 mr-2">03.</span> Some Things I've Built
@@ -252,5 +285,6 @@
     <script src="components/footer.js"></script>
     <script src="script.js"></script>
     <script>feather.replace();</script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
 </body>
 </html>
