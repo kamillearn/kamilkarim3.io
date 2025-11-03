@@ -1,4 +1,6 @@
-/* Base Styles */
+/* ================================
+   Base Styles
+================================ */
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +14,9 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
 }
 
-/* Project Cards */
+/* ================================
+   Project Cards
+================================ */
 .project-card {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -48,22 +52,76 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 }
 
-/* Experience Tabs */
-.experience-tab.active-tab {
-    border-color: #64ffda;
+/* ================================
+   Experience Items
+================================ */
+.experience-item {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.experience-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience card - same background as website */
+.experience-item .bg-dark-800 {
+    background: transparent; /* matches overall background */
+    border-radius: 0.75rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: none; /* no shadow until hover */
+}
+
+/* Subtle hover: small lift & soft edge */
+.experience-item .bg-dark-800:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(100, 255, 218, 0.08);
+}
+
+/* Remove default list style */
+.experience-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Prevent duplicate bullets */
+.experience-item li {
+    position: relative;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.experience-item li::before {
+    content: none !important;
+    border: 0;
+}
+
+/* Align custom bullet span ▹ */
+.experience-item li > span:first-child {
+    display: inline-block;
+    width: 1.25rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    line-height: 1;
+    transform: translateY(2px);
     color: #64ffda;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.experience-content {
-    display: none;
+/* Slight hover accent for bullets inside hovered card */
+.experience-item .bg-dark-800:hover li > span:first-child {
+    color: #7fffe0;
+    transform: translateY(1px);
 }
 
-.experience-content.active-content {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
+/* ================================
+   Animations
+================================ */
+@keyframes slideUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -74,25 +132,39 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Responsive Adjustments */
+/* ================================
+   Responsive Adjustments
+================================ */
 @media (max-width: 768px) {
     .project-card,
     .project-card:nth-child(even) {
         display: flex;
         flex-direction: column;
     }
-    
+
     .project-image,
     .project-card:nth-child(even) .project-image {
         grid-column: 1 / -1;
         opacity: 0.25;
     }
-    
+
     .project-content,
     .project-card:nth-child(even) .project-content {
         grid-column: 1 / -1;
         padding: 2rem;
         background-color: rgba(10, 25, 47, 0.85);
         text-align: left;
+    }
+}
+
+/* ================================
+   Reduced Motion (accessibility)
+================================ */
+@media (prefers-reduced-motion: reduce) {
+    .experience-item,
+    .experience-item .bg-dark-800 {
+        transition: none !important;
+        transform: none !important;
+        box-shadow: none !important;
     }
 }
