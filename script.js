@@ -34,9 +34,75 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    // Navbar shadow on scroll and active section highlighting
+    // Mobile section title updater
+    const mobileSectionTitle = document.querySelector('custom-navbar')?.shadowRoot.querySelector('.mobile-section-title');
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+    let headerHeight = 0;
+
+    function updateHeaderHeight() {
+        const navbar = document.querySelector('custom-navbar');
+        if (navbar) {
+            headerHeight = navbar.offsetHeight + 12;
+        }
+    }
+
+    function updateActiveSection() {
+        if (!mobileSectionTitle) return;
+        
+        const sections = document.querySelectorAll('section[id]');
+        const activationLine = lastKnownScrollPosition + headerHeight;
+        
+        let activeSection = null;
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top + window.pageYOffset;
+            const sectionBottom = sectionTop + rect.height;
+            
+            if (sectionTop <= activationLine && sectionBottom > activationLine) {
+                activeSection = section;
+            }
+        });
+
+        if (activeSection) {
+            const label = activeSection.dataset.label || '';
+            if (mobileSectionTitle.textContent !== label) {
+                mobileSectionTitle.classList.add('hidden');
+                setTimeout(() => {
+                    mobileSectionTitle.textContent = label;
+                    mobileSectionTitle.classList.remove('hidden');
+                }, 200);
+            }
+        }
+    }
+
+    function handleScroll() {
+        lastKnownScrollPosition = window.scrollY;
+        
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveSection();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    // Initialize
+    updateHeaderHeight();
+    document.querySelectorAll('section[id]').forEach(section => {
+        section.style.scrollMarginTop = `${headerHeight}px`;
+    });
+
+    // Set up event listeners
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', () => {
+        updateHeaderHeight();
+        updateActiveSection();
+    });
+// Navbar shadow on scroll and active section highlighting
     const navbar = document.querySelector('custom-navbar');
-    const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
+const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
     
     window.addEventListener('scroll', function() {
@@ -58,9 +124,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+
+                    // Update mobile title if no intersection yet
+                    if (current === '' && window.scrollY === 0 && mobileSectionTitle) {
+                        mobileSectionTitle.textContent = '00. Introduction';
+                    }
+});
     });
 });
