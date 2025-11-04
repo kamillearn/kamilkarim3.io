@@ -31,11 +31,14 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     transition: all 0.25s ease;
 }
-
-.project-card:hover .project-image {
+.project-image img {
     filter: none;
+    transition: filter 0.25s ease;
 }
 
+.project-card:hover .project-image img {
+    filter: brightness(1.1);
+}
 .project-content {
     grid-column: 7 / -1;
     grid-row: 1 / -1;
@@ -46,12 +49,14 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:nth-child(even) .project-image {
     grid-column: 6 / -1;
 }
-
 .project-card:nth-child(even) .project-content {
     grid-column: 1 / 8;
     text-align: left;
 }
 
+.project-image {
+    opacity: 1;
+}
 /* ================================
    Experience Items
 ================================ */
