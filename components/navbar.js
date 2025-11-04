@@ -104,7 +104,8 @@ class CustomNavbar extends HTMLElement {
                     <i data-feather="menu"></i>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="#about"><span class="text-primary-500">01.</span> About</a></li>
+                    <li><a href="#introduction"><span class="text-primary-500">00.</span> Introduction</a></li>
+                    <li><a href="#about"><span class="text-primary-500">01.</span> About Me</a></li>
                     <li><a href="#experience"><span class="text-primary-500">02.</span> Experience</a></li>
                     <li><a href="#projects"><span class="text-primary-500">03.</span> Projects</a></li>
                     <li><a href="#contact"><span class="text-primary-500">04.</span> Contact</a></li>
