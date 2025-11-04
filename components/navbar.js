@@ -77,7 +77,6 @@ class CustomNavbar extends HTMLElement {
                 .nav-links .resume-btn:hover {
                     background-color: rgba(100, 255, 218, 0.1);
                 }
-                
                 .mobile-menu-btn {
                     display: none;
                     background: none;
@@ -85,8 +84,23 @@ class CustomNavbar extends HTMLElement {
                     color: #0e172a;
                     cursor: pointer;
                 }
-                
-                @media (max-width: 768px) {
+                .mobile-section-title {
+                    display: none;
+                    color: #e6f1ff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-right: 1rem;
+                    padding: 0.25rem 0.75rem;
+                    background-color: rgba(255, 255, 255, 0.06);
+                    border-radius: 9999px;
+                    opacity: 1;
+                    transition: opacity 0.2s ease, background-color 0.2s ease;
+                }
+
+                .mobile-section-title.hidden {
+                    opacity: 0;
+                }
+@media (max-width: 768px) {
                     .mobile-menu-btn {
                         display: block;
                     }
@@ -94,8 +108,12 @@ class CustomNavbar extends HTMLElement {
                     .nav-links {
                         display: none;
                     }
+
+                    .mobile-section-title {
+                        display: block;
+                    }
                 }
-            </style>
+</style>
             <nav>
                 <div class="logo">
                     <a href="#">KK</a>
@@ -103,7 +121,8 @@ class CustomNavbar extends HTMLElement {
                 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
-                <ul class="nav-links">
+                <div class="mobile-section-title" aria-live="polite">00. Introduction</div>
+<ul class="nav-links">
                     <li><a href="#introduction"><span class="text-primary-500">00.</span> Introduction</a></li>
                     <li><a href="#about"><span class="text-primary-500">01.</span> About Me</a></li>
                     <li><a href="#experience"><span class="text-primary-500">02.</span> Experience</a></li>
