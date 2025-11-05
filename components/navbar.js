@@ -89,33 +89,32 @@ class CustomNavbar extends HTMLElement {
                     color: #ccd6f6;
                     font-size: 0.9rem;
                     font-weight: 500;
-                    margin-right: 1rem;
                     padding: 0.5rem 0;
                     position: relative;
-                    opacity: 1;
-                    transition: color 0.3s ease;
-                }
-
-                .mobile-section-title.hidden {
-                    opacity: 0;
+                    flex: 1;
+                    text-align: center;
                 }
 
                 .mobile-section-title.active {
                     color: #64ffda;
                 }
 
-                .mobile-section-title.active::after {
+                .mobile-section-title::after {
                     content: '';
                     position: absolute;
-                    width: 100%;
+                    width: 0;
                     height: 2px;
                     background-color: #64ffda;
                     bottom: 0;
-                    left: 0;
-                    animation: fadeIn 0.3s ease-in-out;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: width 0.3s ease-in-out;
                 }
 
-                .mobile-section-title:hover {
+                .mobile-section-title.active::after {
+                    width: 100%;
+                }
+.mobile-section-title:hover {
                     color: #64ffda;
                 }
 @media (max-width: 768px) {
@@ -136,10 +135,10 @@ class CustomNavbar extends HTMLElement {
                 <div class="logo">
                     <a href="#">KK</a>
                 </div>
+                <div class="mobile-section-title active" aria-live="polite">00. Introduction</div>
                 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
                 </button>
-                <div class="mobile-section-title" aria-live="polite">00. Introduction</div>
 <ul class="nav-links">
                     <li><a href="#introduction"><span class="text-primary-500">00.</span> Introduction</a></li>
                     <li><a href="#about"><span class="text-primary-500">01.</span> About Me</a></li>
