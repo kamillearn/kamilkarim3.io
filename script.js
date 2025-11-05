@@ -70,8 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileSectionTitle.classList.add('hidden');
                 setTimeout(() => {
                     mobileSectionTitle.textContent = label;
+                    mobileSectionTitle.classList.add('active');
                     mobileSectionTitle.classList.remove('hidden');
-                }, 200);
+}, 200);
             }
         }
     }
@@ -131,6 +132,7 @@ const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
                     // Update mobile title if no intersection yet
                     if (current === '' && window.scrollY === 0 && mobileSectionTitle) {
                         mobileSectionTitle.textContent = '00. Introduction';
+                        mobileSectionTitle.classList.add('active');
                     }
 });
     });
