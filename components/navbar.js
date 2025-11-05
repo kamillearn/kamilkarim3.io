@@ -86,19 +86,37 @@ class CustomNavbar extends HTMLElement {
                 }
                 .mobile-section-title {
                     display: none;
-                    color: #e6f1ff;
-                    font-size: 1rem;
-                    font-weight: 600;
+                    color: #ccd6f6;
+                    font-size: 0.9rem;
+                    font-weight: 500;
                     margin-right: 1rem;
-                    padding: 0.25rem 0.75rem;
-                    background-color: rgba(255, 255, 255, 0.06);
-                    border-radius: 9999px;
+                    padding: 0.5rem 0;
+                    position: relative;
                     opacity: 1;
-                    transition: opacity 0.2s ease, background-color 0.2s ease;
+                    transition: color 0.3s ease;
                 }
 
                 .mobile-section-title.hidden {
                     opacity: 0;
+                }
+
+                .mobile-section-title.active {
+                    color: #64ffda;
+                }
+
+                .mobile-section-title.active::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #64ffda;
+                    bottom: 0;
+                    left: 0;
+                    animation: fadeIn 0.3s ease-in-out;
+                }
+
+                .mobile-section-title:hover {
+                    color: #64ffda;
                 }
 @media (max-width: 768px) {
                     .mobile-menu-btn {
