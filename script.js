@@ -63,19 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 activeSection = section;
             }
         });
-
         if (activeSection) {
             const label = activeSection.dataset.label || '';
             if (mobileSectionTitle.textContent !== label) {
-                mobileSectionTitle.classList.add('hidden');
-                setTimeout(() => {
-                    mobileSectionTitle.textContent = label;
-                    mobileSectionTitle.classList.add('active');
-                    mobileSectionTitle.classList.remove('hidden');
-}, 200);
+                mobileSectionTitle.textContent = label;
+                mobileSectionTitle.classList.toggle('active', activeSection !== null);
             }
+        } else {
+            mobileSectionTitle.classList.remove('active');
         }
-    }
+}
 
     function handleScroll() {
         lastKnownScrollPosition = window.scrollY;
@@ -128,11 +125,12 @@ const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
                     if (link.getAttribute('href') === `#${current}`) {
                         link.classList.add('active');
                     }
-
                     // Update mobile title if no intersection yet
                     if (current === '' && window.scrollY === 0 && mobileSectionTitle) {
                         mobileSectionTitle.textContent = '00. Introduction';
                         mobileSectionTitle.classList.add('active');
+                    } else if (current && mobileSectionTitle) {
+                        mobileSectionTitle.classList.toggle('active', true);
                     }
 });
     });
