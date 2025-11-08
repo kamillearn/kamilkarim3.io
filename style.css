@@ -239,35 +239,43 @@ img, video {
     }
 }
 
-/* ===== Splash / Intro ===== */
-#intro-screen{
-  position:fixed; inset:0;
-  background:#0e172a;             /* your site bg */
-  display:flex; align-items:center; justify-content:center;
-  z-index:999999;                  /* above everything */
-  opacity:1; visibility:visible;
-  transition:opacity .6s ease, visibility .6s ease;
+
+/* ================================
+   Intro Splash Screen
+================================ */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #0e172a; /* match your site background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* The logo (you can replace text with an <img>) */
+.intro-logo {
+  font-size: 5rem;
+  color: #64ffda;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: introFade 1.2s ease forwards;
 }
 
 /* Logo animation */
-#intro-screen .intro-logo{
-  font: 700 72px/1 system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
-  color:#64ffda;
-  letter-spacing:2px;
-  opacity:0; transform:scale(.9);
-  animation:introShow 1.2s ease forwards;
+@keyframes introFade {
+  0% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes introShow{
-  0%   { opacity:0; transform:scale(.9); }
-  60%  { opacity:1; transform:scale(1.02); }
-  100% { opacity:1; transform:scale(1); }
+/* When the intro ends */
+#intro-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
 }
-
-/* when we end the splash */
-#intro-screen.fade-out{
-  opacity:0; visibility:hidden;
-}
-
-/* prevent scroll while splash is visible */
-html.splash-lock, body.splash-lock{ overflow:hidden; }
