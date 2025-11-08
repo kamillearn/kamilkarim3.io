@@ -137,29 +137,11 @@ const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
 });
 
 
+window.addEventListener('DOMContentLoaded', () => {
+  const intro = document.getElementById('intro-screen');
+  setTimeout(() => {
+    intro.classList.add('fade-out');
+  }, 2000); // show for 2 seconds
+});
 
 
-  // lock scroll immediately
-  document.documentElement.classList.add('splash-lock');
-  document.body.classList.add('splash-lock');
-
-  // Show splash at least ~1.2s; then fade when page finishes
-  function endSplash(){
-    const splash = document.getElementById('intro-screen');
-    if (!splash || splash.classList.contains('fade-out')) return;
-    splash.classList.add('fade-out');
-    document.documentElement.classList.remove('splash-lock');
-    document.body.classList.remove('splash-lock');
-  }
-
-  // Fallback timer (shows the logo animation, then fades after 2s)
-  const splashTimer = setTimeout(endSplash, 2000);
-
-  // Prefer ending when all resources are loaded
-  window.addEventListener('load', function(){
-    // ensure at least ~1s of visibility after logo anim starts
-    setTimeout(function(){
-      clearTimeout(splashTimer);
-      endSplash();
-    }, 400);
-  });
