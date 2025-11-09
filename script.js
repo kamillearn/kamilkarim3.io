@@ -137,26 +137,9 @@ const navLinks = navbar.shadowRoot.querySelectorAll('.nav-links a');
 });
 
 
-<script>
-(function () {
-  var splash = document.getElementById('intro-screen');
-  if (!splash) return;
 
-  function hide() {
-    if (splash.classList.contains('fade-out')) return;
-    splash.classList.add('fade-out');
-    setTimeout(function(){ splash.remove(); }, 650); // fully detach after fade
-  }
 
-  // Fallback timer: go away after ~1.8s even if load never fires
-  var t = setTimeout(hide, 1800);
 
-  // Prefer to end on real load if it happens first
-  window.addEventListener('load', function(){
-    clearTimeout(t);
-    hide();
-  }, { once: true });
-})();
-</script>
+
 
 
